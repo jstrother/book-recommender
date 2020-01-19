@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
     })
     .then(({ data }) => {
       consola.ready({
-        message: `data from axios server ${data}`,
+        message: `data from axios server ${JSON.stringify(data)}`,
         badge: true,
       });
       res.json(data);
