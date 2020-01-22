@@ -1,3 +1,4 @@
+require('dotenv').config();
 const consola = require('consola');
 const express = require('express');
 const axios = require('axios');
@@ -29,7 +30,7 @@ app.get('/', (req, res) => {
         type: 'books',
         info: 1,
         limit: 7,
-        k: process.env.TASTE_DIVE_KEY,
+        k: process.env.TASTE_DIVE_API_KEY,
       },
     })
     .then(({ data }) => {

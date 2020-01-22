@@ -66,9 +66,6 @@ module.exports = {
     name: 'fade',
     mode: 'out-in',
   },
-  env: {
-    TASTE_DIVE_API_KEY: process.env.TASTE_DIVE_API_KEY,
-  },
   serverMiddleware: {
     '/api/title': '~/api/title.js',
   },
