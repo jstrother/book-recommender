@@ -3,6 +3,8 @@ const consola = require('consola');
 const express = require('express');
 const axios = require('axios');
 
+const replaceSpaces = require('../functions/replaceSpaces');
+
 const app = express();
 const jsonParser = express.json();
 
@@ -10,18 +12,7 @@ app.use(jsonParser);
 
 // GET - /api/title
 app.get('/', (req, res) => {
-  // req.json().then((data) => console.log(`req: ${data}`)); // throws error
-  // res.json().then((data) => console.log(`res: ${data}`)); // throws error
-
-  // console.log(`req: ${JSON.stringify(req)}`); // throws error
-  // console.log(`res: ${JSON.stringify(res)}`); // throws error
-
-  // console.log(`req: ${req}`); // req: [object Object]
-  // console.log(`res: ${res}`); // res: [object Object]
-
   const title = 'and then there were none'; // this is just until data is coming from user input
-
-  const replaceSpaces = (str) => str.split(' ').join('+');
 
   axios
     .get('https://tastedive.com/api/similar', {
