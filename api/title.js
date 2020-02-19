@@ -2,7 +2,7 @@ require('dotenv').config();
 const consola = require('consola');
 const express = require('express');
 const axios = require('axios');
-// const jsonpAdapter = require('axios-jsonp');
+const jsonpAdapter = require('axios-jsonp');
 
 const replaceSpaces = require('../functions/replaceSpaces');
 
@@ -24,6 +24,7 @@ app.get('/', (req, res) => {
         limit: 7,
         k: process.env.TASTE_DIVE_API_KEY,
       },
+      adapter: jsonpAdapter,
     })
     .then(({ data }) => {
       consola.ready({
