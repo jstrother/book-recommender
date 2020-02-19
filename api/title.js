@@ -2,6 +2,7 @@ require('dotenv').config();
 const consola = require('consola');
 const express = require('express');
 const axios = require('axios');
+// const jsonpAdapter = require('axios-jsonp');
 
 const replaceSpaces = require('../functions/replaceSpaces');
 

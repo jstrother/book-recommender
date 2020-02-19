@@ -19,7 +19,7 @@ export const actions = {
       });
       const { data } = await this.$axios.$get('/api/title', { titleFromUser });
       consola.ready({
-        message: `data returned from api: ${data}`,
+        message: `FETCH_BOOK_TITLES: data returned from api: ${data}`,
         badge: true,
       });
       commit('SET_NEW_TITLES', data);
